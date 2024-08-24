@@ -1,0 +1,52 @@
+$base-size: 18;
+@function rem($target, $context: $base-size) {
+    @return (calc($target / $base-size)) * 1rem;
+}
+
+// colors
+$white: #FFFFFF;
+$black: #000000;
+$primary: #FF4715;
+$gray-3: #333333;
+$gray-e: #E0E0E0;
+$gray-c: #c7c7c7;
+
+$imgPath: "../../images";
+
+
+/////////////////////////////////////////////
+$default-behaviour: true; //  true or false
+
+//== font-families
+@font-face {
+    font-family: 'HelveticaNeueLTProBd';
+    src: url(../../fonts/HelveticaNeueLTProBd.otf);
+}
+@font-face {
+    font-family: 'HelveticaNeueLTProBdEx';
+    src: url(../../fonts/HelveticaNeueLTProBdEx.otf);
+}
+@font-face {
+    font-family: 'HelveticaNeueLTProEx';
+    src: url(../../fonts/HelveticaNeueLTProEx.otf);
+}
+@font-face {
+    font-family: 'HelveticaNeueLTProRoman';
+    src: url(../../fonts/HelveticaNeueLTProRoman.otf);
+}
+
+$fontBold: 'HelveticaNeueLTProBd', sans-serif;
+$fontBdEx: 'HelveticaNeueLTProBdEx', sans-serif;
+$fontEx: 'HelveticaNeueLTProEx', sans-serif;
+$fontRoman: 'HelveticaNeueLTProRoman', sans-serif;
+//
+// font family
+$font-family-default: $fontRoman;
+$font-numbers-default: $fontRoman;
+$fonts-map-default: (
+);
+// font family
+$font-family-reverse: $fontRoman;
+$font-numbers-reverse: $fontRoman;
+$fonts-map-reverse: (
+);

@@ -65,9 +65,11 @@ $(document)
         tabs.hide().eq(me.index()).show();
         setTimeout(() => {
             tabs.eq(me.index()).find('.aos-init').addClass('aos-animate');
-            $('html, body').animate({
-                scrollTop: me.parent().offset().top - $('header').innerHeight() - 30
-            })
+            let scrollTop = me.parent().offset().top - $('header').innerHeight() - 30;
+            if ($(window).width() > 767) {
+                scrollTop = me.parents().closest('section').offset().top + 50;
+            }
+            $('html, body').animate({ scrollTop })
         }, 10);
     })
 
@@ -104,17 +106,26 @@ $('.history')
     })
 
 $('.numbers-list-toggle')
-    .on('click', '.numbers-line li', function () {
+    .on('click', '.numbers-line li span', function () {
         let me = $(this);
         $('.numbers-line li').removeClass('active');
-        me.addClass('active');
+        me.parent().addClass('active');
         $('.content-tabs > div > *').removeClass('aos-animate');
         $('.content-tabs > div')
             .hide()
-            .eq(me.index()).show();
+            .eq(me.parent().index()).show();
         setTimeout(() => {
-            $('.content-tabs > div').eq(me.index()).find('> *').addClass('aos-animate');
+            $('.content-tabs > div').eq(me.parent().index()).find('> *').addClass('aos-animate');
         }, 10);
+    })
+$('.accordion')
+    .on('click', '.head', function () {
+        let me = $(this);
+        me.parents('.item').siblings().removeClass('active');
+        me.parents('.item').siblings().find('.content').slideUp();
+        
+        me.parents('.item').toggleClass('active');
+        me.siblings('.content').slideToggle();
     })
 /*********************************************
  * FUNCTIONS
@@ -161,7 +172,7 @@ function animate() {
     headerTheme();
 }
 function headerTheme() {
-    // Show & Hide - Header
+    // Show & Hide - Header Home page
     if ($('.home-hero').length) {
         if ($(window).scrollTop() >= $(window).height()) {
             $('header').addClass('show');

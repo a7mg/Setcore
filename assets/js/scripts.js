@@ -106,7 +106,7 @@ $('.history')
     })
 
 $('.numbers-list-toggle')
-    .on('click', '.numbers-line li span', function () {
+    .on('mouseenter', '.numbers-line li span', function () {
         let me = $(this);
         $('.numbers-line li').removeClass('active');
         me.parent().addClass('active');
@@ -131,10 +131,15 @@ $('.accordion')
  * FUNCTIONS
 /*********************************************/
 function pageLoaded() {
-    $('#loading').fadeOut(function () {
+    if ($('#loading').length) {
+        $('#loading').fadeOut(function () {
+            initAos();
+            $('body').addClass('loaded');
+        })
+    } else {
         initAos();
         $('body').addClass('loaded');
-    })
+    }
 }
 function onDocumentReady() {
     if (location.href.includes('127.0.0.1') || true) {

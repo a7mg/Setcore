@@ -170,25 +170,25 @@ p + .sub-title {
             border: 1px solid #707070;
             margin-top: -1px;
             overflow: hidden;
-            @media (min-width: 768px) {
+            @media (min-width: 993px) {
                 &:nth-child(odd) {
                     .media-container {
                         order: 1;
                     }
                 }
             }
-            @media (max-width: 767px) {
+            @media (max-width: 992px) {
                 flex-direction: column;
             }
             .media-container {
-                min-width: 35%;
+                min-width: 40%;
                 background-color: #000000;
                 overflow: hidden;
                 position: relative;
-                @media (max-width: 767px) {
+                @media (max-width: 992px) {
                     &::before {
                         content: "";
-                        padding: 30% 50%;
+                        padding-top: 50%;
                         display: block;
                     }
                 }
@@ -637,7 +637,10 @@ ul.listed {
     position: relative;
     .bg {
         // height: rem(550);
-        margin-bottom: -17%;
+        margin-bottom: -20%;
+        @media (min-width: 992px) {
+            margin-top: -20vh;
+        }
         svg {
             width: 100%;
             height: auto;
@@ -1090,7 +1093,7 @@ ul.listed {
     padding: rem(200) 0;
     background-color: #000;
     position: relative;
-    color: #FFF;
+    color: #fff;
     .bg {
         position: absolute;
         top: 0;

@@ -27,6 +27,24 @@
             }
         }
     }
+    .hero-content {
+        margin: 0 auto;
+        width: rem(790);
+        max-width: 100%;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: rem(70);
+        .logo-container {
+            padding: rem(70) 0;
+            margin: auto;
+        }
+        p {
+            font-size: rem(20);
+            font-weight: $fontEx;
+        }
+    }
     .hero-bottom {
         width: 100%;
         margin-top: auto;
@@ -490,9 +508,11 @@ p + .sub-title {
         .story-card {
             border-bottom: 1px solid #747474;
             margin-bottom: rem(80);
-            align-items: end;
             .content {
                 padding: rem(85) 0;
+            }
+            img {
+                width: 100%;
             }
             @media (max-width: 767px) {
                 .img-container {
@@ -512,7 +532,8 @@ p + .sub-title {
                     }
                 }
             }
-            &:nth-child(even) {
+            &:nth-child(odd) {
+                align-items: end;
                 @media (min-width: 768px) {
                     flex-direction: row-reverse;
                 }
@@ -527,30 +548,109 @@ p + .sub-title {
                     }
                 }
             }
-            &:nth-child(odd) {
+            &:nth-child(even) {
+                padding-top: rem(115);
                 .content {
+                    padding-top: rem(50);
                     @media (min-width: 768px) {
-                        padding: rem(50) 0;
+                        padding-top: 0;
                         padding-bottom: rem(200);
                         padding-#{$right}: 20%;
                     }
                 }
                 .img-container {
                     padding-#{$right}: 30%;
-                    @media (min-width: 768px) {
-                        img {
-                            transform: translateY(rem(150));
-                        }
+                    img {
+                        margin-bottom: rem(-140);
                     }
+                    // @media (min-width: 768px) {
+                    //     img {
+                    //         transform: translateY(rem(150));
+                    //     }
+                    // }
                 }
             }
         }
+    }
+    &.news {
+        .main-title {
+            margin-bottom: rem(100);
+        }
+        .slider {
+            .news-item {
+                width: calc(100% / 4.4);
+                padding-#{$left}: 3%;
+                @media (max-width: 1200px) {
+                    width: calc(100% / 3.4);
+                }
+                @media (max-width: 767px) {
+                    padding-#{$left}: rem(15);
+                    width: calc(100% / 2.4);
+                }
+                @media (max-width: 580px) {
+                    width: calc(100% / 2.1);
+                }
+            }
+        }
+        .news-list {
+            margin-top: rem(180);
+            > .row {
+                .col-lg-4 {
+                    margin: 0 0 rem(150);
+                }
+            }
+            @media (min-width: 992px) {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    &.clients {
+        .main-title {
+            text-align: #{$left};
+            margin-bottom: rem(100);
+        }
+        .content {
+            padding: rem(30) 0;
+            .logo {
+                padding: 0 rem(30);
+            }
+            .flickity-slider {
+                display: flex;
+                align-items: center;
+            }
+            img {
+                margin: auto;
+                max-height: rem(100);
+                display: block;
+            }
+        }
+    }
+}
+.news-item {
+    .img-container {
+        margin-bottom: rem(22);
+        &::before {
+            padding-top: calc((365 / 370) * 100%);
+        }
+    }
+    h4 {
+        font-size: rem(20);
+        line-height: rem(25);
+        font-weight: $fontBold;
+        margin: 0 0 rem(20);
+    }
+    p {
+        font-size: rem(17);
+        line-height: rem(23);
+        margin-bottom: rem(30);
     }
 }
 .link-arrow,
 .link-arrow-square {
     color: #000000;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     white-space: nowrap;
     overflow: hidden;

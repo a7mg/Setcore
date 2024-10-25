@@ -139,6 +139,21 @@
     font-family: $fontBdEx;
     line-height: rem(48);
     font-weight: normal;
+    &.hs-sq {
+        text-align: start;
+        position: relative;
+        &:before {
+            content: '';
+            width: rem(200);
+            height: rem(30);
+            background-color: $primary;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: calc(100% + #{rem(30)});
+        }
+    }
 }
 .sub-title {
     font-size: rem(25);
@@ -156,15 +171,24 @@ p + .sub-title {
 }
 .bg-offwhite {
     background-color: $gray-e;
+    .accordion .item {
+        background-color: inherit;
+    }
 }
 .bg-gray {
     background-color: $gray-c;
+    .accordion .item {
+        background-color: inherit;
+    }
 }
 .bg-brown {
     background-color: $gray-3;
     color: #fff;
     hr {
         border-color: #707070;
+    }
+    .accordion .item {
+        background-color: inherit;
     }
 }
 .section {
@@ -737,7 +761,7 @@ ul.listed {
     position: relative;
     .bg {
         // height: rem(550);
-        margin-bottom: -20%;
+        margin-bottom: -15%;
         @media (min-width: 992px) {
             margin-top: -20vh;
         }

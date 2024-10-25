@@ -252,8 +252,12 @@ $.fn.isInViewport = function () {
 
 
 function initSliders() {
-    newsSlider();
-    clientsSlider();
+    if ($('.news .slider').length) {
+        newsSlider();
+    }
+    if ($('.clients .slider').length) {
+        clientsSlider();
+    }
 }
 function newsSlider() {
     $('.news .slider').flickity({

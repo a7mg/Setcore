@@ -52,6 +52,12 @@ html {
     }
   }
 }
+.left-container {
+  @media (min-width: 1200px) {
+      padding-#{$left}: 10%;
+      padding-#{$right}: 5%;
+  }
+}
 
 .has-space {
   @media (min-width: 1400px) {

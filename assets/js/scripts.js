@@ -72,6 +72,23 @@ $(document)
             $('html, body').animate({ scrollTop })
         }, 10);
     })
+    .on('change', '.control.file input', function () {
+        var me = $(this);
+        var file = me[0].files[0];
+        if (file) {
+            me.parent().next('div').text(file.name)
+        }
+    })
+    .on('click', '.tabs-btns li', function () {
+        var me = $(this);
+        me.siblings().removeClass('active');
+        me.addClass('active');
+        let parent = me.parents('.contact-tabs');
+        parent.find('.content > div').removeClass('active');
+        parent.find('.content > div').eq(me.index()).addClass('active');
+        $('.map-container > div').removeClass('active');
+        $('.map-container > div').eq(me.index()).addClass('active');
+    })
 
 $('.history')
     .on('click', '.timeline li', function () {
@@ -258,9 +275,20 @@ function initSliders() {
     if ($('.clients .slider').length) {
         clientsSlider();
     }
+    if ($('.careers-slider').length) {
+        careersSlider();
+    }
 }
 function newsSlider() {
     $('.news .slider').flickity({
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: false,
+        pageDots: false,
+    });
+}
+function careersSlider() {
+    $('.careers-slider').flickity({
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,

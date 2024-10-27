@@ -673,8 +673,13 @@ p + .sub-title {
             }
             img {
                 margin: auto;
-                max-height: rem(100);
+                height: rem(100);
                 display: block;
+            }
+            .certif-slider {
+                img {
+                    height: rem(150);
+                }
             }
         }
     }
@@ -693,6 +698,58 @@ p + .sub-title {
             }
             @media (max-width: 580px) {
                 width: calc(100% / 2.1);
+            }
+        }
+    }
+    &.our-team {
+        .main-title {
+            margin-bottom: rem(45);
+        }
+        p {
+            font-size: rem(18);
+            line-height: rem(22);
+            font-family: $fontEx;
+        }
+        .row {
+            > div {
+                margin-top: rem(80);
+            }
+        }
+        .base-fit {
+            margin-bottom: rem(22);
+            &:before {
+                padding-top: calc((565 / 495) * 100%);
+            }
+        }
+        h5 {
+            font-size: rem(25);
+            line-height: rem(30);
+            margin-bottom: rem(10);
+            font-family: $fontBdEx;
+        }
+        h6 {
+            font-size: rem(22);
+            line-height: rem(30);
+            font-family: $fontEx;
+        }
+    }
+    .contr-images {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        div:not(:last-child) {
+            margin: rem(10) 0;
+            margin-#{$right}: rem(85);
+        }
+        img {
+            height: rem(180);
+        }
+        @media (max-width: 767px) {
+            div:not(:last-child) {
+                margin-#{$right}: rem(40);
+            }
+            img {
+                height: rem(120);
             }
         }
     }
@@ -766,6 +823,14 @@ p + .sub-title {
         height: rem(17);
         background: url(#{$imgPath}/icons/arrow-bg-orange-right.svg) no-repeat center / contain;
         margin-#{$left}: rem(10);
+    }
+    &.large {
+        font-size: rem(35);
+        line-height: rem(40);
+        &:after {
+            width: rem(30);
+            height: rem(30);
+        }
     }
 }
 

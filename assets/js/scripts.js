@@ -272,8 +272,11 @@ function initSliders() {
     if ($('.news .slider').length) {
         newsSlider();
     }
-    if ($('.clients .slider').length) {
-        clientsSlider();
+    if ($('.clients-slider').length) {
+        smoothSlider('.clients-slider');
+    }
+    if ($('.certif-slider').length) {
+        smoothSlider('.certif-slider');
     }
     if ($('.careers-slider').length) {
         careersSlider();
@@ -295,18 +298,22 @@ function careersSlider() {
         pageDots: false,
     });
 }
-function clientsSlider() {
-    $('.clients .slider').flickity({
-        accessibility: true,
-        wrapAround: true,
-        setGallerySize: true,
-        // ImagesLoaded: true,
-        resize: true,
+function smoothSlider(element) {
+    $(element).flickity({
+        cellAlign: 'left',
+        contain: true,
         prevNextButtons: false,
         pageDots: false,
-        pauseAutoPlayOnHover: true,
-        percentPosition: true,
-        selectedAttraction: 0.001,
-        autoPlay: 3000,
+        // accessibility: true,
+        // wrapAround: true,
+        // setGallerySize: true,
+        // ImagesLoaded: true,
+        // resize: true,
+        // prevNextButtons: false,
+        // pageDots: false,
+        // pauseAutoPlayOnHover: true,
+        // percentPosition: true,
+        // selectedAttraction: 0.001,
+        // autoPlay: 3000,
     });
 }

@@ -159,7 +159,7 @@ function pageLoaded() {
     }
 }
 function onDocumentReady() {
-    if (location.href.includes('127.0.0.1') || true) {
+    if (location.href.includes('127.0.0.1')) {
         $("menu").load("partial/menu.html");
         $("header").load("partial/header.html");
         $("footer").load("partial/footer.html");
@@ -272,14 +272,15 @@ function initSliders() {
     if ($('.news .slider').length) {
         newsSlider();
     }
-    if ($('.clients-slider').length) {
-        smoothSlider('.clients-slider');
-    }
-    if ($('.certif-slider').length) {
-        smoothSlider('.certif-slider');
-    }
     if ($('.careers-slider').length) {
         careersSlider();
+    }
+
+    if ($('.clients-slider').length) {
+        sliderAfterLoad('.clients-slider');
+    }
+    if ($('.certif-slider').length) {
+        sliderAfterLoad('.certif-slider');
     }
 }
 function newsSlider() {
@@ -297,6 +298,20 @@ function careersSlider() {
         prevNextButtons: false,
         pageDots: false,
     });
+}
+
+function sliderAfterLoad(parent) {
+    let images = $(parent).find('img');
+    let total = $(images).length;
+    let loaded = 0;
+    $(images).each(i => {
+        $(this).on('load', function () {
+            loaded++;
+            if (loaded == total) {
+                smoothSlider(parent);
+            }
+        })
+    })
 }
 function smoothSlider(element) {
     $(element).flickity({

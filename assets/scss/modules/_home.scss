@@ -97,7 +97,7 @@
             color: #fff !important;
             font-size: rem(28);
             line-height: 1.5 !important;
-            font-family: $fontEx;
+            font-family: $fontEx !important;
             &:after {
                 margin-#{$left}: rem(20);
                 width: rem(25);
@@ -271,6 +271,8 @@ p + .sub-title {
                     left: 0;
                 }
                 .play {
+                    display: flex;
+                    display: none;
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -281,7 +283,6 @@ p + .sub-title {
                     background-color: #f44415;
                     border: 2px solid #f44415;
                     border-radius: 50%;
-                    display: flex;
                     padding: 0;
                     &:hover {
                         background-color: transparent;
@@ -299,11 +300,12 @@ p + .sub-title {
                 padding: rem(100);
                 display: flex;
                 flex-direction: column;
+                flex: 1;
                 @media (max-width: 767px) {
                     padding: rem(42) rem(25);
                 }
                 > div {
-                    margin: auto;
+                    margin: auto 0;
                 }
             }
             h3 {
@@ -345,9 +347,9 @@ p + .sub-title {
                 font-family: $fontBdEx;
             }
             .card-body {
-                padding: rem(180) rem(30) rem(50);
+                padding: rem(150) rem(30) rem(50);
                 img {
-                    height: rem(93);
+                    height: rem(150);
                     margin-bottom: rem(65);
                 }
                 p {
@@ -664,6 +666,14 @@ p + .sub-title {
         }
         .content {
             padding: rem(30) 0;
+            > div:not(.flickity-enabled) {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                img {
+                    max-width: none;
+                }
+            }
             .logo {
                 padding: 0 rem(30);
             }
@@ -673,8 +683,8 @@ p + .sub-title {
             }
             img {
                 margin: auto;
-                height: rem(100);
                 display: block;
+                height: rem(100);
             }
             .certif-slider {
                 img {
@@ -742,7 +752,7 @@ p + .sub-title {
             margin-#{$right}: rem(85);
         }
         img {
-            height: rem(180);
+            height: rem(150);
         }
         @media (max-width: 767px) {
             div:not(:last-child) {
@@ -918,6 +928,10 @@ ul.listed {
     }
     .img-container {
         overflow: hidden;
+        @extend .base-fit;
+        &:before {
+            padding-top: calc((581 / 1920) * 100%);
+        }
     }
     .row {
         .img-container {

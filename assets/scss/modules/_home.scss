@@ -676,6 +676,7 @@ p + .sub-title {
             }
             .logo {
                 padding: 0 rem(30);
+                width: rem(260);
             }
             .flickity-slider {
                 display: flex;
@@ -684,7 +685,7 @@ p + .sub-title {
             img {
                 margin: auto;
                 display: block;
-                height: rem(100);
+                width: 100%;
             }
             .certif-slider {
                 img {

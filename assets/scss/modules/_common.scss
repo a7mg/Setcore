@@ -80,6 +80,7 @@ body {
   scroll-behavior: smooth;
   overflow: hidden;
   font-size: rem(20);
+  letter-spacing: rem(0.5);
   &.loaded {
     overflow: auto;
   }

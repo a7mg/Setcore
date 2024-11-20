@@ -19,26 +19,26 @@ $default-behaviour: true; //  true or false
 
 //== font-families
 @font-face {
-    font-family: 'HelveticaNeueLTProBd';
-    src: url(../../fonts/HelveticaNeueLTProBd.otf);
+    font-family: 'SemiBold';
+    src: url(../../fonts/Inter_18pt-SemiBold.ttf);
 }
 @font-face {
-    font-family: 'HelveticaNeueLTProBdEx';
-    src: url(../../fonts/HelveticaNeueLTProBdEx.otf);
+    font-family: 'ExtraBold';
+    src: url(../../fonts/Inter_18pt-ExtraBold.ttf);
 }
 @font-face {
-    font-family: 'HelveticaNeueLTProEx';
-    src: url(../../fonts/HelveticaNeueLTProEx.otf);
+    font-family: 'Medium';
+    src: url(../../fonts/Inter_18pt-Medium.ttf);
 }
 @font-face {
-    font-family: 'HelveticaNeueLTProRoman';
-    src: url(../../fonts/HelveticaNeueLTProRoman.otf);
+    font-family: 'Regular';
+    src: url(../../fonts/Inter_18pt-Regular.ttf);
 }
 
-$fontBold: 'HelveticaNeueLTProBd', sans-serif;
-$fontBdEx: 'HelveticaNeueLTProBdEx', sans-serif;
-$fontEx: 'HelveticaNeueLTProEx', sans-serif;
-$fontRoman: 'HelveticaNeueLTProRoman', sans-serif;
+$fontBold: 'SemiBold', sans-serif;
+$fontBdEx: 'ExtraBold', sans-serif;
+$fontEx: 'Regular', sans-serif;
+$fontRoman: 'Regular', sans-serif;
 //
 // font family
 $font-family-default: $fontRoman;

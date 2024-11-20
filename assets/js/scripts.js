@@ -277,7 +277,19 @@ function initSliders() {
     }
 
     if ($('.clients-slider').length) {
-        sliderAfterLoad('.clients-slider');
+        $('.clients-slider').flickity({
+            accessibility: true,
+            wrapAround: true,
+            setGallerySize: true,
+            ImagesLoaded: true,
+            resize: true,
+            prevNextButtons: false,
+            pageDots: false,
+            pauseAutoPlayOnHover: true,
+            percentPosition: true,
+            selectedAttraction: 0.001,
+            autoPlay: 2000,
+        });
     }
     if ($('.certif-slider').length) {
         sliderAfterLoad('.certif-slider');

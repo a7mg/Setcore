@@ -73,7 +73,7 @@ header {
         padding: rem(15) 0;
         border: 0;
         background-color: transparent;
-        margin-#{$left}: rem(30);
+        margin-#{$left}: rem(60);
         &:hover {
             > i {
                 background-color: $primary;
@@ -105,6 +105,8 @@ header {
     // align-items: center;
     font-family: $fontEx;
     line-height: 1.5;
+    display: inline-flex;
+    align-items: center;
     &::before {
         content: "";
         background-color: $primary;

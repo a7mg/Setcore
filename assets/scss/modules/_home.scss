@@ -690,6 +690,7 @@ p + .sub-title {
             .certif-slider {
                 img {
                     height: rem(150);
+                    width: auto;
                 }
             }
         }
@@ -898,11 +899,17 @@ ul.listed {
         //     object-fit: cover;
         // }
     }
+    > .container {
+        margin-top: -15%;
+    }
     .main-title {
         margin-bottom: rem(65);
     }
     .hero-text {
-        padding: rem(100) 0;
+        padding: 10% 0 20%;
+        @media (max-width: 767px) {
+            padding: rem(100) 0 rem(50);
+        }
     }
 }
 

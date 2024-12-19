@@ -883,15 +883,30 @@ ul.listed {
 }
 .services-hero {
     position: relative;
+    @media (min-width: 1300px) and (max-height: 1500px) {
+        min-height: 100vh;
+    }
+    @media (min-width: 2000px) {
+        padding-bottom: 5%;
+    }
     .bg {
-        // height: rem(550);
-        margin-bottom: -15%;
-        @media (min-width: 992px) {
-            margin-top: -20vh;
-        }
         svg {
             width: 100%;
             height: auto;
+        }
+        @media (min-width: 1000px) {
+            padding-top: 43%;
+            overflow: hidden;
+            position: relative;
+            svg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        @media (min-width: 1500px) {
+            // height: 90vh;
+            // padding-top: 45%;
         }
         // img {
         //     width: 100%;
@@ -906,7 +921,7 @@ ul.listed {
         margin-bottom: rem(65);
     }
     .hero-text {
-        padding: 10% 0 20%;
+        padding: 10% 0;
         @media (max-width: 767px) {
             padding: rem(100) 0 rem(50);
         }

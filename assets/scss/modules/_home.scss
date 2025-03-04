@@ -1306,6 +1306,9 @@ ul.listed {
                 line-height: 1;
                 font-family: $fontBdEx;
                 margin: 0;
+                @media (max-width: 767px) {
+                    font-size: rem(20);
+                }
             }
             button {
                 width: rem(36);
@@ -1314,6 +1317,7 @@ ul.listed {
                 border: 0;
                 background-color: $primary;
                 // display: flex;
+                padding: 0;
                 &::before,
                 &:after {
                     content: "";
